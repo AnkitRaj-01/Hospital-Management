@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom base styles */
+@layer base {
+  body {
+    @apply bg-gray-50 text-gray-900 font-sans antialiased;
+  }
+  
+  h1, h2, h3, h4 {
+    @apply font-bold;
+  }
+  
+  h1 {
+    @apply text-3xl mb-6;
+  }
+  
+  h2 {
+    @apply text-2xl mb-4;
+  }
+  
+  h3 {
+    @apply text-xl mb-3;
+  }
+}
+
+/* Custom component classes */
+@layer components {
+  .btn {
+    @apply font-bold py-2 px-4 rounded transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-blue-600 text-white hover:bg-blue-700;
+  }
+  
+  .btn-danger {
+    @apply bg-red-600 text-white hover:bg-red-700;
+  }
+  
+  .btn-success {
+    @apply bg-green-600 text-white hover:bg-green-700;
+  }
+  
+  .input-field {
+    @apply w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm 
+           focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500;
+  }
+  
+  .card {
+    @apply bg-white rounded-lg shadow-md overflow-hidden;
+  }
+  
+  .notification {
+    @apply fixed top-4 right-4 z-50 px-6 py-4 rounded-md shadow-lg flex items-center justify-between;
+  }
+  
+  .notification-success {
+    @apply bg-green-500 text-white;
+  }
+  
+  .notification-error {
+    @apply bg-red-500 text-white;
+  }
+}
+
+/* Custom utilities */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .spinner {
+    @apply animate-spin rounded-full h-8 w-8 border-t-2 border-b-2 border-blue-500 mx-auto my-8;
+  }
+}
+
+/* Animation for notifications */
+.notification-enter {
+  opacity: 0;
+  transform: translateX(100%);
+}
+
+.notification-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: all 300ms ease-in;
+}
+
+.notification-exit {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.notification-exit-active {
+  opacity: 0;
+  transform: translateX(100%);
+  transition: all 300ms ease-out;
+}
